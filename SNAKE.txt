@@ -1,0 +1,100 @@
+4→dim(L₃)
+If L₃(1)=1246:Then
+Disp "LOAD?"
+Input "[Y/N]",Str1
+If Str1="Y":Then
+L₃(2)→S
+L₃(3)→H
+L₃(4)→D
+1→G
+Goto A
+Else
+Goto M
+End
+Else
+Goto M
+End
+
+Lbl M
+DelVar L₁
+DelVar L₂
+DelVar L₃
+DelVar X
+DelVar Y
+25→dim(L₁)
+25→dim(L₂)
+8→L₁(1)
+4→L₂(1)
+1→G
+4→S
+0→H
+randInt(1,4)→D
+
+Lbl A
+ClrHome
+If X≠0:Output(Y,X,"*")
+For(A,1,25)
+If L₁(A)≠0:Then
+Output(L₂(A),L₁(A),"O"
+If L₁(1)=X and L₂(1)=Y:Then
+DelVar X
+DelVar Y
+If S≠25:S+1→S
+H+5→H
+End
+If L₁(1)=L₁(A) and L₂(1)=L₂(A) and A≠1:Then
+Output(L₂(1),L₁(1),"X"
+Output(4,5,"YOU DIED"
+DelVar L₃
+Output(5,5,"SCORE: ")
+Output(5,12,H)
+SetUpEditor 
+Stop
+End
+End
+End
+
+getKey→K
+If K=24:4→D
+If K=25:1→D
+If K=26:2→D
+If K=34:3→D
+If K=105:Then
+Disp "SAVE?"
+Input "[Y/N]",Str1
+If Str1="Y":Then
+DelVar L₃
+4→dim(L₃)
+1246→L₃(1)
+S→L₃(2)
+H→L₃(3)
+D→L₃(4)
+End
+Output(1,1,"SCORE: "
+Output(1,8,H)
+SetUpEditor 
+Stop
+End
+For(A,1,S)
+If S-A>1:Then
+L₁(S-A-1)→L₁(S-A)
+L₂(S-A-1)→L₂(S-A)
+End
+End
+
+If D=1:L₂(1)-1→L₂(1)
+If D=2:L₁(1)+1→L₁(1)
+If D=3:L₂(1)+1→L₂(1)
+If D=4:L₁(1)-1→L₁(1)
+If L₁(1)=0:16→L₁(1)
+If L₁(1)=17:1→L₁(1)
+If L₂(1)=0:8→L₂(1)
+If L₂(1)=9:1→L₂(1)
+G+1→G
+If G=15:Then
+1→G
+randInt(1,16)→X
+randInt(1,8)→Y
+If X=0:Output(Y,X,"θ"
+End
+Goto A
