@@ -1,100 +1,93 @@
-4→dim(L₃)
-If L₃(1)=1246:Then
-Disp "LOAD?"
-Input "[Y/N]",Str1
-If Str1="Y":Then
-L₃(2)→S
-L₃(3)→H
-L₃(4)→D
-1→G
-Goto A
-Else
-Goto M
-End
-Else
-Goto M
-End
-
-Lbl M
-DelVar L₁
-DelVar L₂
-DelVar L₃
-DelVar X
-DelVar Y
-25→dim(L₁)
-25→dim(L₂)
-8→L₁(1)
-4→L₂(1)
-1→G
-4→S
-0→H
-randInt(1,4)→D
-
-Lbl A
+AxesOff
+ClrDraw
+RecallPic Pic0
+3→dim(ʟS)
+For(A,1,500):End
+{8.4,8.3,8.2}→ʟS
+AxesOn
 ClrHome
-If X≠0:Output(Y,X,"*")
-For(A,1,25)
-If L₁(A)≠0:Then
-Output(L₂(A),L₁(A),"O"
-If L₁(1)=X and L₂(1)=Y:Then
-DelVar X
-DelVar Y
-If S≠25:S+1→S
-H+5→H
-End
-If L₁(1)=L₁(A) and L₂(1)=L₂(A) and A≠1:Then
-Output(L₂(1),L₁(1),"X"
-Output(4,5,"YOU DIED"
-DelVar L₃
-Output(5,5,"SCORE: ")
-Output(5,12,H)
-SetUpEditor 
-Stop
-End
-End
-End
-
+3→S
+0→I
+26→D
+8.4→ʟS(1)
+1→C
+While 1
+S→dim(ʟS)
 getKey→K
-If K=24:4→D
-If K=25:1→D
-If K=26:2→D
-If K=34:3→D
-If K=105:Then
-Disp "SAVE?"
-Input "[Y/N]",Str1
-If Str1="Y":Then
-DelVar L₃
-4→dim(L₃)
-1246→L₃(1)
-S→L₃(2)
-H→L₃(3)
-D→L₃(4)
+If K=24 or K=25 or K=26 or K=34:K→D
+If K=105:Pause :If K=45:Then
+Input "DIE?[Y/N]",Str0
+If Str0="Y":Goto 0
 End
-Output(1,1,"SCORE: "
-Output(1,8,H)
-SetUpEditor 
-Stop
-End
-For(A,1,S)
-If S-A>1:Then
-L₁(S-A-1)→L₁(S-A)
-L₂(S-A-1)→L₂(S-A)
-End
-End
+augment({0},ʟS→ʟS
+If D=25:ʟS(2)-.1→ʟS(1)
+If D=26:ʟS(2)+1→ʟS(1)
+If D=34:ʟS(2)+.1→ʟS(1)
+If D=24:ʟS(2)-1→ʟS(1)
 
-If D=1:L₂(1)-1→L₂(1)
-If D=2:L₁(1)+1→L₁(1)
-If D=3:L₂(1)+1→L₂(1)
-If D=4:L₁(1)-1→L₁(1)
-If L₁(1)=0:16→L₁(1)
-If L₁(1)=17:1→L₁(1)
-If L₂(1)=0:8→L₂(1)
-If L₂(1)=9:1→L₂(1)
-G+1→G
-If G=15:Then
-1→G
-randInt(1,16)→X
-randInt(1,8)→Y
-If X=0:Output(Y,X,"θ"
+int(ʟS(1))→X
+10fPart(ʟS(1)→Y:If X=17:1+Y/10→ʟS(1)
+If X=0:16+Y/10→ʟS(1)
+If Y=9:.1+X→ʟS(1)
+If Y=0:.8+X→ʟS(1)
+
+ʟS(1)→A
+9→ʟS(1)
+If max(ʟS=A)
+Then
+Lbl 0
+Output(10fPart(A),int(A),"X")
+ClrDraw
+AxesOff
+Text(20,32,"YOU DIED!"
+Horizontal ⁻2
+Horizontal 5
+Text(27,32,"SCORE:"
+Text(27,55,5(S-3)
+Pause 
+ClrDraw
+5→dim(ʟSNHS)
+augment(ʟSNHS,{(S-3)5})→ʟSNHS
+SortD(ʟSNHS)
+5→dim(ʟSNHS)
+DelVar I
+DelVar D
+DelVar C
+DelVar K
+DelVar Str0
+DelVar A
+DelVar ʟS
+Text(10,27,"HIGH SCORES"
+For(A,1,5)
+Text(A*7+12,15,A
+Text(A*7+12,20,")"
+Text(A*7+12,25,ʟSNHS(A)
+If ʟSNHS(A)=5(S-3) and S≠⁻1:Then
+Text(A*7+12,60,"YOU"
+⁻1→S
 End
-Goto A
+End
+DelVar S
+Pause 
+AxesOn
+ClrHome
+Stop
+Else
+A→ʟS(1)
+Output(10fPart(A),int(A),"O"
+If ʟS(1)≠I:Output(10fPart(ʟS(S+1)),int(ʟS(S+1))," "
+End
+If C=30 and I=0:Then
+1→C
+randInt(1,16)→I
+(randInt(1,8)/10)+I→I
+Output(10fPart(I),int(I),"*"
+Else:C+1→C:End
+
+If 10fPart(I)=10fPart(A) and int(I)=int(A):Then:0→I
+1→C
+S+1→S
+Else
+If I≠0:Output(10fPart(I),int(I),"*"
+End
+End
