@@ -11,25 +11,31 @@ ClrHome
 0→M
 8.4→ʟS(1)
 1→C
-
 AxesOn
 While 1
 S→dim(ʟS)
 getKey→K
 If K=24 or K=25 or K=26 or K=34:K→D
-If K=105:Pause 
+If K=105:Then
+AxesOff
+Text(33,28,"SCORE:"
+Text(33,52,M)
+Text(25,28,"GAME PAUSED"
+Pause 
+Output(10fPart(ʟS(1)),int(ʟS(1)),"H"
+Pause 
+Output(10fPart(ʟS(1)),int(ʟS(1)),"O"
+End
+
 augment({0},ʟS→ʟS
-If D=24 or D=26:ʟS(2)-(25-D)→ʟS(1)
-If D=25:ʟS(2)-.1→ʟS(1)
-If D=34:ʟS(2)+.1→ʟS(1)
+ʟS(2)+(D=26)-(D=24)+.1((D=34)-(D=25))→ʟS(1)
+Ans+16(not(int(Ans))-(17=int(Ans)))+.8(not(fPart(Ans))-(.9=fPart(Ans
+Ans→ʟS(1
 int(ʟS(1))→X
-10fPart(ʟS(1)→Y:If X=17:1+Y/10→ʟS(1)
-If X=0:16+Y/10→ʟS(1)
-If Y=9:.1+X→ʟS(1)
-If Y=0:.8+X→ʟS(1)
-ʟS(1)→A
-9→ʟS(1)
-If max(ʟS=A)
+10fPart(ʟS(1))→Y
+ʟS(1→A
+9→ʟS(1
+If max(ʟS=A
 Then
 Lbl 0
 Output(10fPart(A),int(A),"X")
@@ -45,7 +51,7 @@ Goto H
 Else
 A→ʟS(1)
 Output(10fPart(A),int(A),"O"
-Output(10fPart(ʟS(S+1)),int(ʟS(S+1))," "
+If ʟS(S+1)≠I:Output(10fPart(ʟS(S+1)),int(ʟS(S+1))," "
 If I=ʟS(1):Then:5+M→M
 If S≠39:S+1→S
 0→I
@@ -57,9 +63,7 @@ randInt(1,16)→I
 (randInt(1,8)/10)+I→I
 Output(10fPart(I),int(I),"*"
 Else:C+1→C:End
-If I≠0:Output(10fPart(I),int(I),"*"
 End
-
 Lbl H
 ClrDraw
 5→dim(ʟSNHS)
@@ -75,7 +79,6 @@ DelVar K
 DelVar Str0
 DelVar A
 DelVar ʟS
-
 Text(10,27,"HIGH SCORES"
 0→C
 For(A,1,5
@@ -134,4 +137,4 @@ DelVar Str0
 DelVar A
 DelVar B
 AxesOn
-ClrHome
+Output(1,1,"")
