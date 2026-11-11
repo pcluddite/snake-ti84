@@ -1,36 +1,42 @@
+If F=0:15→F
+FnOff 
 AxesOff
+ClrHome
 ZStandard
 ClrDraw
 RecallPic Pic0
-For(A,1,500):End
-ClrHome
+Pause 
+ClrDraw
 {8.4,8.3,8.2}→ʟS
 3→S
 0→I
-26→D
+randInt(1,4)→D
+26(D=1)+24(D=2)+34(D=3)+25(D=4)→D
 0→M
-8.4→ʟS(1)
+randInt(1,16)→ʟS(1
+ʟS(1)+randInt(1,8)/10→ʟS(1
 1→C
-AxesOn
 While 1
-S→dim(ʟS)
-getKey→K
-If K=24 or K=25 or K=26 or K=34:K→D
-If K=105:Then
-AxesOff
+S→dim(ʟS
+D→K
+getKey→D
+If D≠105:Then
+24(D=24)+25(D=25)+34(D=34)+26(D=26)→D
+K(D=0)+D(D≠0)→D
+Else
+K→D
 Text(33,28,"SCORE:"
-Text(33,52,M)
-Text(25,28,"GAME PAUSED"
+Text(33,52,M
+Text(25,28,"GAME PAUSED
 Pause 
-Output(10fPart(ʟS(1)),int(ʟS(1)),"H"
+Output(10fPart(ʟS(1)),int(ʟS(1)),"H
 Pause 
-Output(10fPart(ʟS(1)),int(ʟS(1)),"O"
+Output(10fPart(ʟS(1)),int(ʟS(1)),"O
 End
-
 augment({0},ʟS→ʟS
-ʟS(2)+(D=26)-(D=24)+.1((D=34)-(D=25))→ʟS(1)
+ʟS(2)+(D=26)-(D=24)+.1((D=34)-(D=25))→ʟS(1
 Ans+16(not(int(Ans))-(17=int(Ans)))+.8(not(fPart(Ans))-(.9=fPart(Ans
-Ans→ʟS(1
+Ans→ʟS(1)
 int(ʟS(1))→X
 10fPart(ʟS(1))→Y
 ʟS(1→A
@@ -38,48 +44,48 @@ int(ʟS(1))→X
 If max(ʟS=A
 Then
 Lbl 0
-Output(10fPart(A),int(A),"X")
+Output(10fPart(A),int(A),"X
 ClrDraw
 AxesOff
-Text(20,32,"YOU DIED!"
+Text(20,32,"YOU DIED!
 Horizontal ⁻2
 Horizontal 5
-Text(27,32,"SCORE:"
+Text(27,32,"SCORE:
 Text(27,55,M
 Pause 
 Goto H
 Else
-A→ʟS(1)
-Output(10fPart(A),int(A),"O"
-If ʟS(S+1)≠I:Output(10fPart(ʟS(S+1)),int(ʟS(S+1))," "
+A→ʟS(1
+Output(10fPart(A),int(A),"O
+If ʟS(S+1)≠I:Output(10fPart(ʟS(S+1)),int(ʟS(S+1))," 
 If I=ʟS(1):Then:5+M→M
 If S≠39:S+1→S
 0→I
 End
 End
-If C≥30 and I=0:Then
+If C≥F and I=0:Then
 1→C
-randInt(1,16)→I
+randInt(1,16→I
 (randInt(1,8)/10)+I→I
-Output(10fPart(I),int(I),"*"
+Output(10fPart(I),int(I),"*
 Else:C+1→C:End
 End
 Lbl H
 ClrDraw
-5→dim(ʟSNHS)
-For(A,1,5)
-If ʟSNHS(A)=0:0.0101→ʟSNHS(A)
+5→dim(ʟSNHS
+For(A,1,5
+If ʟSNHS(A)=0:0.0101→ʟSNHS(A
 End
 augment(ʟSNHS,{M})→ʟSNHS
-SortD(ʟSNHS)
-5→dim(ʟSNHS)
+SortD(ʟSNHS
+5→dim(ʟSNHS
 DelVar I
 DelVar D
 DelVar K
 DelVar Str0
 DelVar A
 DelVar ʟS
-Text(10,27,"HIGH SCORES"
+Text(10,27,"HIGH SCORES
 0→C
 For(A,1,5
 int(ʟSNHS(A)→H
@@ -87,20 +93,19 @@ int(100fPart(ʟSNHS(A))→I
 100fPart(100fPart(ʟSNHS(A)))→J
 If A≠1:If H≠(int(ʟSNHS(A-1)):C+1→C
 Text(A*7+12,15,C
-Text(A*7+12,20,")"
+Text(A*7+12,20,")
 Text(A*7+12,25,H
 {I,J}→ʟTEMP
 "?
 For(B,1,2
 Ans→Str0
-If ʟTEMP(B)=0:1→ʟTEMP(B)
+If ʟTEMP(B)=0:1→ʟTEMP(B
 Str0
-Ans+sub("ABCDEFGHIJKLMNOPQRSTUVWXYZ",ʟTEMP(B),1
-End
+Ans+sub("ABCDEFGHIJKLMNOPQRSTUVWXYZ",int(ʟTEMP(B)),1:End
 sub(Ans,2,length(Ans)-1→Str0
 Text(A*7+12,65,Str0
 If H=M and fPart(ʟSNHS(A))=0:Then
-Text(A*7+12,65,"YOU"
+Text(A*7+12,65,"YOU
 ⁻1→S
 End
 End
@@ -108,8 +113,7 @@ Pause
 If S=⁻1:Then
 Lbl IN
 ClrHome
-Disp "YOU GOT A"
-Disp "HIGH SCORE!"
+Disp "YOU GOT A":Disp "HIGH SCORE!"
 Input "ENTER INITIALS: ",Str0
 If length(Str0)≠2:Then
 Disp "INVALID"
@@ -137,4 +141,4 @@ DelVar Str0
 DelVar A
 DelVar B
 AxesOn
-Output(1,1,"")
+Output(1,1,"
