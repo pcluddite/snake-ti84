@@ -4,16 +4,20 @@ AxesOff
 ClrHome
 ZStandard
 ClrDraw
-RecallPic Pic0
+Horizontal 5
+Text(23,32,"SNAKE 3.0
+Horizontal ⁻2
+Text(48,16,"COPYRIGHT (C) 2015
+Text(55,24,"TIM BAXENDALE
 Pause 
 ClrDraw
-{8.4,8.3,8.2}→ʟS
+{8.4,8.3,8.2→ʟS
 3→S
 0→I
-randInt(1,4)→D
-26(D=1)+24(D=2)+34(D=3)+25(D=4)→D
+randInt(1,4→D
+26(D=1)+24(D=2)+34(D=3)+25(D=4→D
 0→M
-randInt(1,16)→ʟS(1
+randInt(1,16→ʟS(1
 ʟS(1)+randInt(1,8)/10→ʟS(1
 1→C
 While 1
@@ -25,9 +29,11 @@ If D≠105:Then
 K(D=0)+D(D≠0)→D
 Else
 K→D
-Text(33,28,"SCORE:"
+Horizontal ⁻4
+Text(33,28,"SCORE:
 Text(33,52,M
 Text(25,28,"GAME PAUSED
+Horizontal 4
 Pause 
 Output(10fPart(ʟS(1)),int(ʟS(1)),"H
 Pause 
@@ -36,9 +42,9 @@ End
 augment({0},ʟS→ʟS
 ʟS(2)+(D=26)-(D=24)+.1((D=34)-(D=25))→ʟS(1
 Ans+16(not(int(Ans))-(17=int(Ans)))+.8(not(fPart(Ans))-(.9=fPart(Ans
-Ans→ʟS(1)
-int(ʟS(1))→X
-10fPart(ʟS(1))→Y
+Ans→ʟS(1
+int(ʟS(1→X
+10fPart(ʟS(1→Y
 ʟS(1→A
 9→ʟS(1
 If max(ʟS=A
@@ -58,7 +64,7 @@ Else
 A→ʟS(1
 Output(10fPart(A),int(A),"O
 If ʟS(S+1)≠I:Output(10fPart(ʟS(S+1)),int(ʟS(S+1))," 
-If I=ʟS(1):Then:5+M→M
+If I=ʟS(1:Then:5+M→M
 If S≠39:S+1→S
 0→I
 End
@@ -74,38 +80,34 @@ Lbl H
 ClrDraw
 5→dim(ʟSNHS
 For(A,1,5
-If ʟSNHS(A)=0:0.0101→ʟSNHS(A
+If ʟSNHS(A)=0:0.010101→ʟSNHS(A
 End
-augment(ʟSNHS,{M})→ʟSNHS
+augment(ʟSNHS,{M→ʟSNHS
 SortD(ʟSNHS
 5→dim(ʟSNHS
-DelVar I
-DelVar D
-DelVar K
 DelVar Str0
-DelVar A
 DelVar ʟS
 Text(10,27,"HIGH SCORES
 0→C
 For(A,1,5
-int(ʟSNHS(A)→H
-int(100fPart(ʟSNHS(A))→I
-100fPart(100fPart(ʟSNHS(A)))→J
+int(ʟSNHS(A→H
+int(100fPart(ʟSNHS(A→I
+int(100fPart(100fPart(ʟSNHS(A→J
+100fPart(100fPart(100fPart(ʟSNHS(A→K
 If A≠1:If H≠(int(ʟSNHS(A-1)):C+1→C
 Text(A*7+12,15,C
 Text(A*7+12,20,")
 Text(A*7+12,25,H
-{I,J}→ʟTEMP
+{I,J,K→ʟTMP
 "?
-For(B,1,2
+For(B,1,3
 Ans→Str0
-If ʟTEMP(B)=0:1→ʟTEMP(B
-Str0
-Ans+sub("ABCDEFGHIJKLMNOPQRSTUVWXYZ",int(ʟTEMP(B)),1:End
+If ʟTMP(B)=0:27→ʟTMP(B
+Str0+sub("ABCDEFGHIJKLMNOPQRSTUVWXYZ ",ʟTMP(B),1:End
 sub(Ans,2,length(Ans)-1→Str0
 Text(A*7+12,65,Str0
 If H=M and fPart(ʟSNHS(A))=0:Then
-Text(A*7+12,65,"YOU
+Text(A*7+12,57,"->YOU<-
 ⁻1→S
 End
 End
@@ -113,32 +115,33 @@ Pause
 If S=⁻1:Then
 Lbl IN
 ClrHome
-Disp "YOU GOT A":Disp "HIGH SCORE!"
+Disp "YOU GOT A":Disp "HIGH SCORE!
 Input "ENTER INITIALS: ",Str0
-If length(Str0)≠2:Then
-Disp "INVALID"
+If length(Str0)>3:Then
+Disp "MUST BE 3
+Disp "LETTERS LONG
 Pause 
 Goto IN
 Else
-DelVar ʟTEMP
-For(A,1,2
-inString("ABCDEFGHIJKLMNOPQRSTUVWXYZ",sub(Str0,A,1→ʟTEMP(A
+DelVar ʟTMP
+For(A,1,length(Str0
+inString("ABCDEFGHIJKLMNOPQRSTUVWXYZ ",sub(Str0,A,1→ʟTMP(A
+End
+If dim(ʟTMP)<3:Then
+For(A,dim(ʟTMP)+1,3
+27→ʟTMP(A
+End
 End
 For(A,1,5
 If fPart(ʟSNHS(A))=0:Then
-ʟTEMP(1)/100+ʟSNHS(A)→ʟSNHS(A)
-ʟTEMP(2)/10000+ʟSNHS(A)→ʟSNHS(A)
+ʟTMP(1)/100+ʟSNHS(A→ʟSNHS(A
+ʟTMP(2)/10000+ʟSNHS(A→ʟSNHS(A
+ʟTMP(3)/1000000+ʟSNHS(A→ʟSNHS(A
 End
 End
 End
 End
-DelVar ʟTEMP
-DelVar S
-DelVar I
-DelVar J
-DelVar C
+DelVar ʟTMP
 DelVar Str0
-DelVar A
-DelVar B
 AxesOn
 Output(1,1,"
