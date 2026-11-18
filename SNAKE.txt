@@ -90,7 +90,7 @@ SortD(ʟSNHS
 DelVar Str0
 DelVar ʟS
 Text(10,27,"HIGH SCORES
-0→C
+1→C
 For(A,1,5
 int(ʟSNHS(A→H
 int(100fPart(ʟSNHS(A→I
