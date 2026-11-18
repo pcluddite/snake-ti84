@@ -110,9 +110,9 @@ If ʟTMP(B)=0:27→ʟTMP(B
 Str0+sub("ABCDEFGHIJKLMNOPQRSTUVWXYZ ",ʟTMP(B),1
 End
 sub(Ans,2,length(Ans)-1→Str0
-Text(A*7+12,65,Str0
+Text(A*7+12,63,Str0
 If H=M and fPart(ʟSNHS(A))=0:Then
-Text(A*7+12,57,"->YOU<-
+Text(A*7+12,55,"->YOU<-
 ⁻1→S
 End
 End
