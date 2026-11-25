@@ -103,16 +103,16 @@ Text(10,27,"HIGH SCORES
 1→C
 For(A,1,5
 int(ʟSNHS(A→H
-int(100fPart(ʟSNHS(A→I
-int(100fPart(100fPart(ʟSNHS(A→J
-100fPart(100fPart(100fPart(ʟSNHS(A→K
+3→dim(ʟNAME
+int(100fPart(ʟSNHS(A→ʟNAME(1
+int(100fPart(100fPart(ʟSNHS(A→ʟNAME(2
+int(100fPart(100fPart(100fPart(ʟSNHS(A→ʟNAME(3
 If A≠1:Then
 If H≠int(ʟSNHS(A-1:C+1→C
 End
 Text(A*7+12,15,C
 Text(A*7+12,20,")
 Text(A*7+12,25,H
-{I,J,K→ʟNAME
 "?
 For(B,1,3
 Ans→Str0
@@ -157,9 +157,9 @@ End
 End
 For(A,1,5
 If fPart(ʟSNHS(A))=0:Then
-ʟNAME(1)/100+ʟSNHS(A→ʟSNHS(A
-ʟNAME(2)/10000+ʟSNHS(A→ʟSNHS(A
-ʟNAME(3)/1000000+ʟSNHS(A→ʟSNHS(A
+For(I,1,3
+ʟNAME(I)/(100^I)+ʟSNHS(A→ʟSNHS(A
+End
 End
 End
 End
