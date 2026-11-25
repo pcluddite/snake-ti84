@@ -25,14 +25,14 @@ While 1
 S→dim(ʟS
 D→K
 getKey→D
-If D≠105:Then
+If D=105:Then
+Goto P
+Lbl R
+Else
 24(D=24)+25(D=25)+34(D=34)+26(D=26)→D
 K(D=0)+D(D≠0)→D
 abs(D-K
 If Ans=2 or Ans=9:K→D
-Else
-Goto P
-Lbl R
 End
 augment({0},ʟS→ʟS
 ʟS(2)+(D=26)-(D=24)+.1((D=34)-(D=25))→ʟS(1
