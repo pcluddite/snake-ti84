@@ -83,8 +83,6 @@ Horizontal 5
 Text(27,32,"SCORE:
 Text(27,55,M
 Pause 
-Lbl H
-ClrDraw
 5→dim(ʟSNHS
 For(A,1,5
 If ʟSNHS(A)=0:Then
@@ -94,11 +92,13 @@ End
 ʟSNHS(A)+randInt(1,40)*5→ʟSNHS(A
 End
 End
-augment(ʟSNHS,{M→ʟSNHS
+M→ʟSNHS(1+dim(ʟSNHS
 SortD(ʟSNHS
 5→dim(ʟSNHS
 DelVar Str0
 DelVar ʟS
+Lbl H
+ClrDraw
 Text(10,27,"HIGH SCORES
 1→C
 For(A,1,5
@@ -180,5 +180,5 @@ DelVar ʟNAME
 DelVar ʟVARS
 DelVar Str0
 AxesOn
-Disp "
+Disp "FINAL SCORE:
 M
