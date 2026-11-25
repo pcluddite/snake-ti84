@@ -41,17 +41,7 @@ int(ʟS(1→X
 ʟS(1→A
 9→ʟS(1
 If max(ʟS=A:Then
-Lbl 0
-Output(10fPart(A),int(A),"X
-ClrDraw
-AxesOff
-Text(20,32,"YOU DIED!
-Horizontal ⁻2
-Horizontal 5
-Text(27,32,"SCORE:
-Text(27,55,M
-Pause 
-Goto H
+Goto D
 Else
 A→ʟS(1
 Output(10fPart(A),int(A),"O
@@ -83,6 +73,16 @@ Output(10fPart(ʟS(1)),int(ʟS(1)),"H
 Pause 
 Output(10fPart(ʟS(1)),int(ʟS(1)),"O
 Goto R
+Lbl D
+Output(10fPart(A),int(A),"X
+ClrDraw
+AxesOff
+Text(20,32,"YOU DIED!
+Horizontal ⁻2
+Horizontal 5
+Text(27,32,"SCORE:
+Text(27,55,M
+Pause 
 Lbl H
 ClrDraw
 5→dim(ʟSNHS
