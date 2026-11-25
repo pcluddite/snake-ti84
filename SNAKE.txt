@@ -29,17 +29,9 @@ If D≠105:Then
 24(D=24)+25(D=25)+34(D=34)+26(D=26)→D
 K(D=0)+D(D≠0)→D
 Else
-K→D
-Horizontal ⁻4
-Text(33,28,"SCORE:
-Text(33,52,M
-Text(25,28,"GAME PAUSED
-Horizontal 4
-Pause 
-Output(10fPart(ʟS(1)),int(ʟS(1)),"H
-Pause 
-Output(10fPart(ʟS(1)),int(ʟS(1)),"O
+Goto P
 End
+Lbl R
 augment({0},ʟS→ʟS
 ʟS(2)+(D=26)-(D=24)+.1((D=34)-(D=25))→ʟS(1
 Ans+16(not(int(Ans))-(17=int(Ans)))+.8(not(fPart(Ans))-(.9=fPart(Ans
@@ -79,6 +71,18 @@ Else
 C+1→C
 End
 End
+Lbl P
+K→D
+Horizontal ⁻4
+Text(33,28,"SCORE:
+Text(33,52,M
+Text(25,28,"GAME PAUSED
+Horizontal 4
+Pause 
+Output(10fPart(ʟS(1)),int(ʟS(1)),"H
+Pause 
+Output(10fPart(ʟS(1)),int(ʟS(1)),"O
+Goto R
 Lbl H
 ClrDraw
 5→dim(ʟSNHS
