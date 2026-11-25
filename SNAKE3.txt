@@ -28,6 +28,8 @@ getKey→D
 If D≠105:Then
 24(D=24)+25(D=25)+34(D=34)+26(D=26)→D
 K(D=0)+D(D≠0)→D
+abs(D-K
+If Ans=2 or Ans=9:K→D
 Else
 Goto P
 Lbl R
