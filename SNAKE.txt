@@ -1,3 +1,4 @@
+{A,B,C,D,F,H,I,J,K,M,S→ʟVARS
 15→F
 FnOff 
 AxesOff
@@ -132,6 +133,13 @@ Else
 DelVar ʟTMP
 For(A,1,length(Str0
 inString("ABCDEFGHIJKLMNOPQRSTUVWXYZ ",sub(Str0,A,1→ʟTMP(A
+If ʟTMP(A)=0:Then
+Disp "YOU CAN ONLY
+Disp "USE LETTERS IN
+Disp "INITIALS
+Pause 
+Goto IN
+End
 End
 If dim(ʟTMP)<3:Then
 For(A,dim(ʟTMP)+1,3
@@ -147,9 +155,19 @@ End
 End
 End
 End
+ʟVARS(1→A
+ʟVARS(2→B
+ʟVARS(3→C
+ʟVARS(4→D
+ʟVARS(5→F
+ʟVARS(6→H
+ʟVARS(7→I
+ʟVARS(8→J
+ʟVARS(9→K
+ʟVARS(11→S
 DelVar ʟTMP
+DelVar ʟVARS
 DelVar Str0
 AxesOn
 Disp "
 M
-
