@@ -163,6 +163,8 @@ End
 End
 End
 End
+0→S
+Goto H
 End
 ʟVARS(1→A
 ʟVARS(2→B
